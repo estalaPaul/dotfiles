@@ -1,0 +1,9 @@
+rename autosave
+mkdir vis
+delete
+rename config.conf
+
+mkdir postresitos
+rename index.html
+Q
+q
