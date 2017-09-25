@@ -1,0 +1,39 @@
+rofi.color-enabled: true
+!		   bg	           fg	     bgalt, hlbg       hlfg
+rofi.color-normal: argb:00000000, #D8DEE9, argb:00000000, argb:00000000 , #00FF7F
+rofi.color-urgent: argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #00FF7F
+rofi.color-active: argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #00FF7F
+rofi.color-window: argb:ee222222,  #FAC863 ,  #00FF7F
+rofi.separator-style: solid
+rofi.padding: 300
+rofi.lines: 3
+rofi.bw: 0
+rofi.columns: 1
+rofi.disable-history: true
+
+URxvt.transparent: true
+URxvt.foreground: #dfdfdf
+URxvt.shading: 20
+URxvt.background: #222222
+URxvt.title: Terminal
+URxvt.font: xft:Andale Mono:size=12, xft:FontAwesome:size=12
+URxvt.scrollColor: #222222
+urxvt*foreground: white
+urxvt*background: black
+
+*color0:  #F5FFFA
+*color1:  #5EDA9E
+*color2:  #597368
+*color3:  #327556
+*color4:  #F5FFFA
+*color5:  #BDFCC9
+*color6:  #00EE76
+*color7:  #2FAA96
+*color8:  #F5FFFA
+*color9:  #90FEFB
+*color10: #00EE76
+*color11: #45C3B8 
+*color12: #00EE76
+*color13: #00EE76
+*color14: #90FEFB
+*color15: #F5FFFA
