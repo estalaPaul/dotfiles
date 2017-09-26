@@ -1,0 +1,5 @@
+bind -f common o player-pause
+bind -f common right player-next
+bind -f common p player-play
+bind -f common left player-prev
+bind -f common z player-prev
