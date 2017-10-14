@@ -2,6 +2,10 @@
 
 Some ricing dotfiles
 
+[Wallpaper](https://whvn.cc/331018)
+
+[Start Page Wallpaper](https://i.redd.it/2pbfjvdz9oqx.jpg)
+
 clean
 ![alt-text](https://i.imgur.com/oQXbnH8.png)
 
