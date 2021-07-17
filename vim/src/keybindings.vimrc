@@ -23,6 +23,3 @@ xnoremap <silent> sy<space> "+y
 
 " Clear search
 nmap <silent> cs<space> :let @/ = ""<CR>
-
-"" Keybinding to make that PHP all PSR-2 pretty when you :wq that shit.
-nmap <silent> pcf<space> :call PhpCsFixerFixFile()<CR>
