@@ -26,16 +26,13 @@ Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'SirVer/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'osyo-manga/vim-anzu'
 Plugin 'watzon/vim-edge-template'
+Plugin 'junegunn/goyo.vim'
 
 " Color Schemes
-Plugin 'sonph/onehalf', {'rtp': 'vim/'}
-Plugin 'morhetz/gruvbox'
-Plugin 'sainnhe/gruvbox-material'
 Plugin 'joshdick/onedark.vim'
 
 " All of your Plugins must be added before the following line
