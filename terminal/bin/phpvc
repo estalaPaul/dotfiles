@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ "$1" = "81" ]; then
+    sudo downgrade php=8.1.13 php-sqlite=8.1.13 php-gd=8.1.13 php-intl=8.1.13 --ala-only -- --noconfirm
+    echo "Switched to version 8.1"
+    exit 0
+fi
+
+if [ "$1" = "82" ]; then
+    sudo downgrade php=8.2.0 php-sqlite=8.2.0 php-gd=8.2.0 php-intl=8.2.0 --ala-only -- --noconfirm
+    echo "Switched to version 8.2"
+    exit 0
+fi
+
+echo "Found no matching version for $1"
+exit 1
