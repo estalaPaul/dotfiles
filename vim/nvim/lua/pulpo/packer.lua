@@ -6,8 +6,23 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
+        config = function()
+            require('telescope').setup {
+                defaults = {
+                    mappings = {
+                        n = {
+                            ['<c-d>'] = require('telescope.actions').delete_buffer
+                        },
+                        i = {
+                            ['<c-d>'] = require('telescope.actions').delete_buffer
+                        }
+                    }
+                }
+            }
+        end,
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
@@ -25,20 +40,41 @@ return require('packer').startup(function(use)
             }
         end
     }
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use('ThePrimeagen/harpoon')
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
-    use {'neoclide/coc.nvim', branch = 'release'}
-    use('vim-test/vim-test')
-    use('mattn/emmet-vim')
-    use('airblade/vim-gitgutter')
-    use({
-        'dracula/vim',
-        rtp = 'vim',
-        config = function()
-            vim.cmd('colorscheme dracula')
+
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        requires = {
+            --- Uncomment these if you want to manage LSP servers from neovim
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
+
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'L3MON4D3/LuaSnip'},
+        }
+    }
+
+    use {
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
         end
-    })
+    }
+
+    use {
+        "ayu-theme/ayu-vim",
+        config = function()
+            vim.cmd('colorscheme ayu')
+        end
+    }
+
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('tpope/vim-fugitive')
+    use('vim-test/vim-test')
+    use('airblade/vim-gitgutter')
 end)
 
