@@ -10,6 +10,8 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         config = function()
+            local lga_actions = require("telescope-live-grep-args.actions")
+
             require('telescope').setup {
                 defaults = {
                     mappings = {
@@ -20,10 +22,24 @@ return require('packer').startup(function(use)
                             ['<c-d>'] = require('telescope.actions').delete_buffer
                         }
                     }
+                },
+                extensions = {
+                    live_grep_args = {
+                        auto_quoting = true,
+                        mappings = {
+                            i = {
+                                ["<C-k>"] = lga_actions.quote_prompt(),
+                                ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                            }
+                        }
+                    }
                 }
             }
         end,
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = {
+            {'nvim-lua/plenary.nvim'},
+            {'nvim-telescope/telescope-live-grep-args.nvim'}
+        }
     }
 
     use {
@@ -61,8 +77,18 @@ return require('packer').startup(function(use)
     use {
         'goolord/alpha-nvim',
         config = function ()
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+            require'alpha'.setup(require'alpha.themes.startify'.config)
         end
+    }
+
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
+    use {
+        "brenoprata10/nvim-highlight-colors",
+        config = function() require("nvim-highlight-colors").setup {} end
     }
 
     use {
@@ -72,6 +98,8 @@ return require('packer').startup(function(use)
         end
     }
 
+    use('nvim-tree/nvim-tree.lua')
+    use('nvim-tree/nvim-web-devicons')
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('tpope/vim-fugitive')
     use('vim-test/vim-test')
