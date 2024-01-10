@@ -10,7 +10,7 @@ echo "Setting alacritty terminal up"
 rm -rf ~/.config/alacritty
 mkdir -p ~/.config/alacritty
 sudo pacman -S lsof alacritty --noconfirm > /dev/null
-cp "$SCRIPT_DIR/terminal/alacritty.yml" ~/.config/alacritty/
+cp "$SCRIPT_DIR/terminal/alacritty.toml" ~/.config/alacritty/
 
 echo "Installing zsh as default shell with theme"
 sudo pacman -S zsh zsh-completions --noconfirm > /dev/null
