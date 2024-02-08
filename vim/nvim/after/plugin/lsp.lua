@@ -6,6 +6,7 @@ lsp_zero.on_attach(function(client, bufnr)
     lsp_zero.default_keymaps({buffer = bufnr})
 
     vim.keymap.set('n', '<leader>ac', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', '<leader>ef', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 end)
 
 require('mason').setup({})
@@ -16,7 +17,7 @@ require('mason-lspconfig').setup({
         'tsserver',
         'intelephense',
         'cssls',
-        'pyright',
+        'jedi_language_server',
         'volar',
     },
     handlers = {
@@ -44,4 +45,3 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   })
 })
-

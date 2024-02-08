@@ -92,17 +92,25 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "ayu-theme/ayu-vim",
+        "catppuccin/nvim",
+        as = "catppuccin",
         config = function()
-            vim.cmd('colorscheme ayu')
+            vim.cmd('colorscheme catppuccin')
         end
     }
 
+    use {
+        "folke/trouble.nvim",
+        requires = {
+            { "nvim-tree/nvim-web-devicons" },
+        }
+    }
+
     use('nvim-tree/nvim-tree.lua')
-    use('nvim-tree/nvim-web-devicons')
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('tpope/vim-fugitive')
     use('vim-test/vim-test')
     use('airblade/vim-gitgutter')
+    use('Exafunction/codeium.vim')
 end)
 
