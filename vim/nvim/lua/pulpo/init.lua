@@ -1,4 +1,4 @@
 require('pulpo.maps')
-require('pulpo.packer')
+require('pulpo.package')
 require('pulpo.sets')
 require('pulpo.ts-blade')

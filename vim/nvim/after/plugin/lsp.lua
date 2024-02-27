@@ -17,7 +17,7 @@ require('mason-lspconfig').setup({
         'tsserver',
         'intelephense',
         'cssls',
-        'jedi_language_server',
+        'pylsp',
         'volar',
     },
     handlers = {
@@ -45,3 +45,16 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   })
 })
+
+require('lspconfig').pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391', 'E401'},
+          maxLineLength = 150
+        }
+      }
+    }
+  }
+}
