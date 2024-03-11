@@ -103,6 +103,11 @@ require("lazy").setup({
             { "nvim-tree/nvim-web-devicons" },
         }
     },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
     'nvim-treesitter/nvim-treesitter-context',
     { 'echasnovski/mini.pairs', version = '*', config = function() require('mini.pairs').setup() end },
