@@ -31,6 +31,10 @@ alias spa="sail php artisan"
 alias db="sudo mysql -e"
 alias pdb="sudo -u postgres psql"
 
+alias tn="tmux new"
+alias tl="tmux attach"
+alias ta="tmux attach -t"
+
 # Up/Down arrow search
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -55,4 +59,6 @@ autoload -Uz compinit && compinit
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-export PATH=$PATH:~/bin:~/.local/bin
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
