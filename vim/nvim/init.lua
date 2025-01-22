@@ -232,14 +232,7 @@ require('lazy').setup({
       vim.keymap.set("n", "<leader>b", ":<C-u>call gitblame#echo()<CR>")
     end,
   },
-  {
-    "nvim-java/nvim-java",
-    config = function()
-      require('java').setup()
-    end,
-  },
   'airblade/vim-gitgutter',
-  'mfussenegger/nvim-jdtls',
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -321,12 +314,17 @@ require('lazy').setup({
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+      require('which-key').add {
+          { "<leader>c", group = "[C]ode" },
+          { "<leader>c_", hidden = true },
+          { "<leader>d", group = "[D]ocument" },
+          { "<leader>d_", hidden = true },
+          { "<leader>r", group = "[R]ename" },
+          { "<leader>r_", hidden = true },
+          { "<leader>s", group = "[S]earch" },
+          { "<leader>s_", hidden = true },
+          { "<leader>w", group = "[W]orkspace" },
+          { "<leader>w_", hidden = true },
       }
     end,
   },
@@ -360,7 +358,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { "nvim-tree/nvim-web-devicons", opts = {} },
       {
         "nvim-telescope/telescope-live-grep-args.nvim" ,
         -- This will not install any breaking changes.
