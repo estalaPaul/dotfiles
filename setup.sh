@@ -6,7 +6,7 @@ then
    exit 1
 fi
 
-sudo pacman -S jq acpi ksnip playerctl xclip ttf-inconsolata vim discord onefetch bat inkscape libreoffice-still feh --noconfirm > /dev/null
+sudo pacman -S jq ksnip playerctl xclip vim feh --noconfirm > /dev/null
 
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 source "$SCRIPT_DIR/terminal/setup.sh"

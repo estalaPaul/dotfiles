@@ -1,7 +1,5 @@
 echo "Setting up audio"
-sudo pacman -R pipewire-pulse pipewire-alsa --noconfirm > /dev/null
-sudo pacman -S sof-firmware alsa-ucm-conf alsa-firmware alsa-utils pulseaudio pulseaudio-bluetooth pulseaudio-jack pulseaudio-alsa pavucontrol --noconfirm > /dev/null
-sudo pacman -R xdg-desktop-portal pipewire-audio lib32-pipewire pipewire-media-session pipewire --noconfirm > /dev/null
+sudo pacman -S alsa-utils --noconfirm > /dev/null
 
 echo "Setting up i3"
 sudo pacman -S noto-fonts-emoji --noconfirm > /dev/null

@@ -5,18 +5,15 @@ sudo pacman -S typescript --noconfirm > /dev/null
 yay -S nvm --noconfirm > /dev/null
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 source /usr/share/nvm/init-nvm.sh
-nvm install v16.14.2 > /dev/null
-nvm use v16.14.2
-npm i -g intelephense cspell @cspell/dict-es-es
-cspell link add @cspell/dict-es-es
+nvm install node > /dev/null
+nvm use node
 
 echo "Setting up PHP"
 sudo pacman -S php php-sqlite php-gd php-intl xdebug openssl-1.1 --noconfirm > /dev/null
 echo "Don't forget to uncomment needed extensions in ini file"
 
 echo "Setting up Python venv"
-sudo pacman -S python python-pip
-sudo pip install virtualenv
+sudo pacman -S python python-pip python-virtualenv
 
 echo "Setting up Composer"
 EXPECTED_CHECKSUM="$(php -r 'copy("https://composer.github.io/installer.sig", "php://stdout");')"
