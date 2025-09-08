@@ -7,37 +7,43 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = true
-        interval = 5
-   	separator = " | "
- 	color_good = "#00bc7d"
- 	color_bad = "#ad2f33"
+    colors = true
+    interval = 5
+    separator = " | "
+    color_good = "#00bc7d"
+    color_bad = "#ad2f33"
 }
 
+order += "wireless _first_"
 order += "ethernet _first_"
 order += "disk /"
 order += "memory"
 order += "tztime local"
 
+wireless _first_ {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
+}
+
 ethernet _first_ {
-        format_up = "ETH: %ip (%speed)"
-        format_down = "ETH: down"
-    	separator_block_width = 20
+    format_up = "ETH: %ip (%speed)"
+    format_down = "ETH: down"
+    separator_block_width = 20
 }
 
 disk "/" {
-        format = "DISK: %avail"
-    	separator_block_width = 20
+    format = "DISK: %avail"
+    separator_block_width = 20
 }
 
 memory {
-        format = "MEM: U: %percentage_used / F: %percentage_available"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
-    	separator_block_width = 20
+    format = "MEM: U: %percentage_used / F: %percentage_available"
+    threshold_degraded = "1G"
+    format_degraded = "MEMORY < %available"
+    separator_block_width = 20
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
-    	separator_block_width = 20
+    format = "%Y-%m-%d %H:%M:%S"
+    separator_block_width = 20
 }
